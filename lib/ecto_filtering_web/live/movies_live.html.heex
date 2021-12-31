@@ -1,0 +1,31 @@
+
+<.form let={f} for={@changeset} as="filter" phx-change="filter_changed">
+  <%= textarea f, :filter %>
+  <%= error_tag f, :filter %>
+</.form>
+
+<h6> SQL details </h6>
+<pre style="white-space: pre-wrap;">
+  <%= @sql %>
+</pre>
+args:
+<%= for arg <- @sql_args do %>
+  <code><%= inspect(arg) %></code>
+<% end %>
+<hr/>
+
+<h6> Movies </h6>
+<table>
+  <thead>
+    <th>name</th>
+    <th>year</th>
+  </thead>
+  <%= for movie <- @movies do %>
+  <tr>
+    <td><%= movie.name %></td>
+    <td><%= movie.year %></td>
+  </tr>
+  <% end %>
+</table>
+
+

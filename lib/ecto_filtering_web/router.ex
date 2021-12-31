@@ -17,7 +17,7 @@ defmodule EctoFilteringWeb.Router do
   scope "/", EctoFilteringWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/movies", MoviesLive, :index
   end
 
   # Other scopes may use custom stacks.

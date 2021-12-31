@@ -2,7 +2,7 @@ defmodule EctoFiltering.ParserUtils do
   @moduledoc false
   import NimbleParsec
 
-  def whitespace(), do: ascii_char([?\s, ?\t, ?\n]) |> times(min: 1)
+  def whitespace(), do: ascii_char([?\s, ?\t, ?\r, ?\n]) |> times(min: 1)
 
   def symbol(label) do
     label
